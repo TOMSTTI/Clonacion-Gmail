@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
+    <title>Gmail</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="logo-container">
+            <img src="../Img/Gmail.png" alt="Gmail Logo" class="logo">
+        </div>
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <div class="content">
+    <div class="header" >
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <img src="../Img/Gmail.png" alt="Gmail Logo"><a href="../Pantalla_Carga/Pantalla_Carga.html" class="linea">Gmail</a>
+        <input type="text" placeholder="Buscar correo">
+    </div>
+
+    <table class="tab-list" style="margin-left: 20%; margin-right: auto; padding:1px;" >
+        <tr>
+            <td class="tab-item" role="heading" aria-level="3">
+                <div class="tab-content" tabindex="0" role="tab" aria-selected="true" aria-controls="principal" aria-label="Principal">
+                    <div class="tab-label"><a href="../Principal/index.html">Principal</a></div>
+                </div>
+            </td>
+            <td class="tab-item" role="heading" aria-level="3">
+                <div class="tab-content" tabindex="0" role="tab" aria-selected="false" aria-controls="promociones" aria-label="Promociones">
+                    <div class="new-count">3 nuevos</div>
+                    <div class="tab-label"><a href="../Promociones/Promociones.html">Promociones</a></div>
+                </div>
+            </td>
+            <td class="tab-item" role="heading" aria-level="3">
+                <div class="tab-content" tabindex="0" role="tab" aria-selected="false" aria-controls="social" aria-label="Social">
+                    <div class="new-count">1 nuevo</div>
+                    <div class="tab-label"><a href="../Social/Social.html">Social</a></div>
+                </div>
+            </td>
+            <td class="tab-item" role="heading" aria-level="3">
+                <div class="tab-content" tabindex="0" role="tab" aria-selected="false" aria-controls="notificaciones" aria-label="Notificaciones">
+                    <div class="tab-label"><a href="../Notificaciones/Notificaciones.html">Notificaciones</a></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <aside class="sidebar" id="sidebar">
+        <div style="height: 500px; overflow-y: hidden;">
+            <button class="menu-item">
+                <div class="icon-container" id="icon-recibidos"></div>
+                <span class="title">Recibidos</span>
+            </button>
+            <button class="menu-item">
+                <div class="icon-container" id="icon-destacados"></div>
+                <span class="title">Destacados</span>
+            </button>
+            <button class="menu-item">
+                <div class="icon-container" id="icon-pospuestos"></div>
+                <span class="title">Pospuestos</span>
+            </button>
+            <button class="menu-item">
+                <div class="icon-container" id="icon-enviados"></div>
+                <span class="title">Enviados</span>
+            </button>
+            <button class="menu-item">
+                <div class="icon-container" id="icon-borradores"></div>
+                <span class="title">Borradores</span>
+            </button>
+            <button class="menu-item has-submenu" id="more-btn">
+                <div class="icon-container" id="icon-mas"></div>
+                <span class="title">Más</span>
+            </button>
+            <div class="submenu" id="more-submenu">
+                <button class="menu-item">
+                    <div class="icon-container" id="icon-importantes"></div>
+                    <span class="title">Importantes</span>
+                </button>
+                <button class="menu-item">
+                    <div class="icon-container" id="icon-chats"></div>
+                    <span class="title">Chats</span>
+                </button>
+                <button class="menu-item">
+                    <div class="icon-container" id="icon-programados"></div>
+                    <span class="title">Programados</span>
+                </button>
+                <button class="menu-item">
+                    <div class="icon-container" id="icon-todos"></div>
+                    <span class="title">Todos</span>
+                </button>
+                <button class="menu-item">
+                    <div class="icon-container" id="icon-spam"></div>
+                    <span class="title">Spam</span>
+                </button>
+                <button class="menu-item">
+                    <div class="icon-container" id="icon-papelera"></div>
+                    <span class="title">Papelera</span>
+                </button>
+                <button class="menu-item has-submenu" id="categories-btn">
+                    <div class="icon-container" id="icon-categorias"></div>
+                    <span class="title">Categorías</span>
+                </button>
+                <div class="submenu" id="categories-submenu">
+                    <button class="menu-item">
+                        <div class="icon-container" id="icon-social"></div>
+                        <span class="title">Social</span>
+                    </button>
+                    <button class="menu-item">
+                        <div class="icon-container" id="icon-notificaciones"></div>
+                        <span class="title">Notificaciones</span>
+                    </button>
+                    <button class="menu-item">
+                        <div class="icon-container" id="icon-foros"></div>
+                        <span class="title">Foros</span>
+                    </button>
+                    <button class="menu-item">
+                        <div class="icon-container" id="icon-promociones"></div>
+                        <span class="title">Promociones</span>
+                    </button>
+                </div>
+            </div>
+            <button class="menu-item">
+                <div class="icon-container" id="icon-etiquetas"></div>
+                <span class="title">Etiquetas</span>
+            </button>
+            <button class="menu-item">
+                <div class="icon-container" id="icon-unwanted"></div>
+                <span class="title">Unwanted</span>
+            </button>
+        </aside>
+        
+
+    <div class="side-bar" id="side-bar">
+        <div class="icon-container" id="icon-recibidos"></div>
+        <div class="icon-container" id="icon-destacados"></div>
+        <div class="icon-container" id="icon-pospuestos"></div>
+        <div class="icon-container" id="icon-enviados"></div>
+        <div class="icon-container" id="icon-borradores"></div>
+        <div class="icon-container" id="icon-mas"></div>
+        <div class="icon-container" id="icon-etiquetas"></div>
+        <div class="icon-container" id="icon-unwanted"></div>
+    </div>
+
+    <div class="main-content">
+        <div class="email-list">
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+
+                <span class="sender unread">Tomas Capelleti</span>
+                <span class="subject unread">Proyecto Laboratorio IV</span>
+                <span class="date">27 Ago</span>
+            </div>
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+
+                <span class="sender">Nardelli Franco</span>
+                <span class="subject">Proyecto Laboratorio IV</span>
+                <span class="date">22 Ago</span>
+            </div>
+
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Luis Ramírez</span>
+                <span class="subject">Informe de ventas</span>
+                <span class="date">14 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Gabriela Ortega</span>
+                <span class="subject">Solicitud de vacaciones</span>
+                <span class="date">13 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Jorge Castillo</span>
+                <span class="subject">Actualización de contratos</span>
+                <span class="date">12 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Elena Vega</span>
+                <span class="subject">Presentación de producto</span>
+                <span class="date">11 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Tomás Blanco</span>
+                <span class="subject">Reunión con clientes</span>
+                <span class="date">10 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Isabel Díaz</span>
+                <span class="subject">Solicitud de presupuesto</span>
+                <span class="date">09 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Miguel García</span>
+                <span class="subject">Encuesta de satisfacción</span>
+                <span class="date">08 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Patricia Moreno</span>
+                <span class="subject">Nueva normativa</span>
+                <span class="date">07 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Daniela Rojas</span>
+                <span class="subject">Cambio de horario</span>
+                <span class="date">06 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Fernando Herrera</span>
+                <span class="subject">Invitación a evento</span>
+                <span class="date">05 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Victoria Torres</span>
+                <span class="subject">Actualización de políticas</span>
+                <span class="date">04 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Santiago Romero</span>
+                <span class="subject">Revisión financiera</span>
+                <span class="date">03 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Valeria Suárez</span>
+                <span class="subject">Consulta de servicios</span>
+                <span class="date">02 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Mario Acosta</span>
+                <span class="subject">Confirmación de reunión</span>
+                <span class="date">01 Ago</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Alejandra Navarro</span>
+                <span class="subject">Documentos adjuntos</span>
+                <span class="date">31 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Hugo Ruiz</span>
+                <span class="subject">Plan de marketing</span>
+                <span class="date">30 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Andrea Mendoza</span>
+                <span class="subject">Actualización de proyecto</span>
+                <span class="date">29 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">José Pérez</span>
+                <span class="subject">Pedido de información</span>
+                <span class="date">28 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Carolina Silva</span>
+                <span class="subject">Cierre de ventas</span>
+                <span class="date">27 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Pedro Álvarez</span>
+                <span class="subject">Reporte financiero</span>
+                <span class="date">26 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Silvia Gómez</span>
+                <span class="subject">Nueva solicitud</span>
+                <span class="date">25 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Javier Díaz</span>
+                <span class="subject">Información urgente</span>
+                <span class="date">24 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Lorena Martínez</span>
+                <span class="subject">Cotización solicitada</span>
+                <span class="date">23 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Sebastián Castro</span>
+                <span class="subject">Reunión agendada</span>
+                <span class="date">22 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Manuela Vargas</span>
+                <span class="subject">Actualización de datos</span>
+                <span class="date">21 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Rafael Peña</span>
+                <span class="subject">Cambio de fecha</span>
+                <span class="date">20 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Laura Castillo</span>
+                <span class="subject">Solicitud de informe</span>
+                <span class="date">19 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Diego Fernández</span>
+                <span class="subject">Cambio de plan</span>
+                <span class="date">18 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Valentina Vargas</span>
+                <span class="subject">Notificación importante</span>
+                <span class="date">17 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Federico Morales</span>
+                <span class="subject">Revisión de propuesta</span>
+                <span class="date">16 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Paula Ramos</span>
+                <span class="subject">Estado del proyecto</span>
+                <span class="date">15 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Mario Gil</span>
+                <span class="subject">Propuesta comercial</span>
+                <span class="date">14 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Verónica Herrera</span>
+                <span class="subject">Tareas pendientes</span>
+                <span class="date">13 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Rodrigo Vega</span>
+                <span class="subject">Agenda semanal</span>
+                <span class="date">12 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Adriana López</span>
+                <span class="subject">Llamada programada</span>
+                <span class="date">11 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Julio Ortega</span>
+                <span class="subject">Reporte trimestral</span>
+                <span class="date">10 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Claudia Mendoza</span>
+                <span class="subject">Solicitud de materiales</span>
+                <span class="date">09 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Mauricio Lara</span>
+                <span class="subject">Cambio de proveedor</span>
+                <span class="date">08 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Monica Vargas</span>
+                <span class="subject">Tareas de seguimiento</span>
+                <span class="date">07 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Alberto Fernández</span>
+                <span class="subject">Entrega de informe</span>
+                <span class="date">06 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Marcela Cruz</span>
+                <span class="subject">Capacitación en línea</span>
+                <span class="date">05 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Andrés Torres</span>
+                <span class="subject">Cierre del mes</span>
+                <span class="date">04 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Luisa Morales</span>
+                <span class="subject">Revisión de contrato</span>
+                <span class="date">03 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Francisco Ramírez</span>
+                <span class="subject">Aviso de suspensión</span>
+                <span class="date">02 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Clara Ortega</span>
+                <span class="subject">Nuevo presupuesto</span>
+                <span class="date">01 Jul</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Miguel López</span>
+                <span class="subject">Asignación de tareas</span>
+                <span class="date">30 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Raquel Ríos</span>
+                <span class="subject">Nueva política de empresa</span>
+                <span class="date">29 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Víctor Núñez</span>
+                <span class="subject">Pedido urgente</span>
+                <span class="date">28 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Inés Castillo</span>
+                <span class="subject">Correo de confirmación</span>
+                <span class="date">27 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Eduardo Peña</span>
+                <span class="subject">Solicitud de cotización</span>
+                <span class="date">26 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Esteban Morales</span>
+                <span class="subject">Cambio de dirección</span>
+                <span class="date">25 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Natalia Jiménez</span>
+                <span class="subject">Solicitud de devolución</span>
+                <span class="date">24 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Rodrigo Pérez</span>
+                <span class="subject">Consulta de inventario</span>
+                <span class="date">23 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Eva Suárez</span>
+                <span class="subject">Correo de bienvenida</span>
+                <span class="date">22 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Antonio Blanco</span>
+                <span class="subject">Revisión de contrato</span>
+                <span class="date">21 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Marta Flores</span>
+                <span class="subject">Reporte de asistencia</span>
+                <span class="date">20 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Gustavo Gómez</span>
+                <span class="subject">Envío de documentos</span>
+                <span class="date">19 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Sofía Ramírez</span>
+                <span class="subject">Recordatorio de reunión</span>
+                <span class="date">18 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Manuel Ríos</span>
+                <span class="subject">Actualización de precios</span>
+                <span class="date">17 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Lucía Pérez</span>
+                <span class="subject">Solicitud de materiales</span>
+                <span class="date">16 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Francisco Ortega</span>
+                <span class="subject">Propuesta de colaboración</span>
+                <span class="date">15 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Ana Vargas</span>
+                <span class="subject">Solicitud de aprobación</span>
+                <span class="date">14 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Héctor Ruiz</span>
+                <span class="subject">Problema técnico</span>
+                <span class="date">13 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Carmen Jiménez</span>
+                <span class="subject">Revisión de propuesta</span>
+                <span class="date">12 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Javier Gutiérrez</span>
+                <span class="subject">Informe técnico</span>
+                <span class="date">11 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Mónica Morales</span>
+                <span class="subject">Notificación de pago</span>
+                <span class="date">10 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Pablo Núñez</span>
+                <span class="subject">Actualización de horario</span>
+                <span class="date">09 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Natalia Díaz</span>
+                <span class="subject">Propuesta de cambios</span>
+                <span class="date">08 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Alfredo Gutiérrez</span>
+                <span class="subject">Nueva reunión</span>
+                <span class="date">07 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Luciana Torres</span>
+                <span class="subject">Pedido de confirmación</span>
+                <span class="date">06 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Guillermo López</span>
+                <span class="subject">Planificación de evento</span>
+                <span class="date">05 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Camila Herrera</span>
+                <span class="subject">Revisión de cuentas</span>
+                <span class="date">04 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Emilio Rojas</span>
+                <span class="subject">Informe de avance</span>
+                <span class="date">03 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Olga Torres</span>
+                <span class="subject">Notificación de cambio</span>
+                <span class="date">02 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Roberto Díaz</span>
+                <span class="subject">Solicitud de información</span>
+                <span class="date">01 Jun</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Lucía Morales</span>
+                <span class="subject">Actualización de proyecto</span>
+                <span class="date">31 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Tomás Herrera</span>
+                <span class="subject">Problemas con el servidor</span>
+                <span class="date">30 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Beatriz González</span>
+                <span class="subject">Solicitud de asistencia</span>
+                <span class="date">29 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Gonzalo Romero</span>
+                <span class="subject">Plan de contingencia</span>
+                <span class="date">28 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Carla Sánchez</span>
+                <span class="subject">Informe de ventas</span>
+                <span class="date">27 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Jorge Gutiérrez</span>
+                <span class="subject">Plan de marketing</span>
+                <span class="date">26 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Adriana Muñoz</span>
+                <span class="subject">Actualización de normas</span>
+                <span class="date">25 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Matías Pérez</span>
+                <span class="subject">Solicitud de presupuesto</span>
+                <span class="date">24 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Victoria Díaz</span>
+                <span class="subject">Llamada de seguimiento</span>
+                <span class="date">23 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Carlos Herrera</span>
+                <span class="subject">Entrega de documentación</span>
+                <span class="date">22 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Elena Flores</span>
+                <span class="subject">Reunión de equipo</span>
+                <span class="date">21 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Juan Torres</span>
+                <span class="subject">Estado de proyecto</span>
+                <span class="date">20 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Marcela Ruiz</span>
+                <span class="subject">Solicitud de apoyo</span>
+                <span class="date">19 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Gabriel Núñez</span>
+                <span class="subject">Propuesta de mejora</span>
+                <span class="date">18 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Lorena Vargas</span>
+                <span class="subject">Evaluación de desempeño</span>
+                <span class="date">17 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Fernando Morales</span>
+                <span class="subject">Cambio de plan</span>
+                <span class="date">16 May</span>
+            </div>
+            
+            <div class="email-item">
+                <input type="checkbox">
+                <span class="star" onclick="toggleStar(this)">&#9734;</span>
+                <span class="sender">Valentina Vargas</span>
+                <span class="subject">Notificación importante</span>
+                <span class="date">15 May</span>
+            </div>
+            
+    </div>
+</divclass>
+    <script src="script.js"></script>
+</body>
+</html>
